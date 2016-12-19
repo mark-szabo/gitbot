@@ -1,0 +1,38 @@
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\Bot Application1.dll.config
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\Bot Application1.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\Bot Application1.pdb
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\Autofac.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\Chronic.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\Microsoft.Bot.Builder.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\Microsoft.Bot.Connector.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\Microsoft.Rest.ClientRuntime.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\Newtonsoft.Json.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\System.Net.Http.Formatting.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\System.Web.Http.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\System.Web.Http.WebHost.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\Autofac.xml
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\Microsoft.Bot.Builder.xml
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\Microsoft.Bot.Connector.xml
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\Newtonsoft.Json.xml
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\System.Net.Http.Formatting.xml
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\System.Web.Http.xml
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\System.Web.Http.WebHost.xml
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\ar\Microsoft.Bot.Builder.resources.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\en\Microsoft.Bot.Builder.resources.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\es\Microsoft.Bot.Builder.resources.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\fa\Microsoft.Bot.Builder.resources.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\fr\Microsoft.Bot.Builder.resources.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\ja\Microsoft.Bot.Builder.resources.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\ru\Microsoft.Bot.Builder.resources.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\obj\Debug\Bot Application1.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\obj\Debug\Bot Application1.pdb
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\cs\Microsoft.Bot.Builder.resources.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\bin\de-dE\Microsoft.Bot.Builder.resources.dll
+C:\Users\v-maszab\Source\Repos\gitbot\gitbot\gitbot\obj\Debug\gitbot.csprojResolveAssemblyReference.cache
