@@ -16,7 +16,6 @@ namespace gitbot.Dialogs
         private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> result)
         {
             var message = await result;
-            //await Broadcast(new Uri(message.ServiceUrl), message.Conversation, message.Recipient);
             await Broadcast(
                 $"ServiceUrl: {message.ServiceUrl} \n ConversationId: {message.Conversation.Id} \n BotAccountId: {message.Recipient.Id} \n BotAccountName: {message.Recipient.Name}",
                 "https://facebook.botframework.com/", 
