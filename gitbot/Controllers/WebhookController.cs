@@ -38,19 +38,18 @@ namespace gitbot.Controllers
 
             // Execute the retrieve operation.
             TableResult retrievedResult = table.Execute(retrieveOperation);
-
-            // Print the phone number of the result.
+            
             if (retrievedResult.Result == null) throw new System.Exception("The conversation could not be retrieved.");
 
             string text = jsonContent;
 
             var rootDialog = new RootDialog();
-            await rootDialog.Broadcast(
-                text,
+            await rootDialog.SendTo(
                 ((Conversation)retrievedResult.Result).ServiceUrl,
                 ((Conversation)retrievedResult.Result).ConversationId,
                 ((Conversation)retrievedResult.Result).BotAccountId,
-                ((Conversation)retrievedResult.Result).BotAccountName);
+                ((Conversation)retrievedResult.Result).BotAccountName,
+                text);
 
             var response = Request.CreateResponse(HttpStatusCode.OK);
             return response;

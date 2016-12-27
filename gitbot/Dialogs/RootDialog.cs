@@ -16,17 +16,18 @@ namespace gitbot.Dialogs
         private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> result)
         {
             var message = await result;
-                        
-            await Broadcast(
-                $"ServiceUrl: {message.ServiceUrl} \n ConversationId: {message.Conversation.Id} \n BotAccountId: {message.Recipient.Id} \n BotAccountName: {message.Recipient.Name}",
-                "https://facebook.botframework.com/", 
-                "1068190953300282-283726938688635", 
-                "283726938688635", 
-                "gitbot_84AlOPcgTdB" );
+
+            await SendTo(
+                message.ServiceUrl,
+                message.Conversation.Id,
+                message.Recipient.Id,
+                message.Recipient.Name,
+                "Sorry, I'm not a very talkative bot... :)");
+
             context.Wait(MessageReceivedAsync);
         }
 
-        public async Task Broadcast(string text, string serviceUrl, string conversationId, string botAccountId, string botAccountName)
+        public async Task SendTo(string serviceUrl, string conversationId, string botAccountId, string botAccountName, string text)
         {
             var connector = new ConnectorClient(new Uri(serviceUrl));
             IMessageActivity newMessage = Activity.CreateMessageActivity();

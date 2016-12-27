@@ -45,7 +45,6 @@ namespace gitbot
                     result = conversation.RowKey;
                 }
 
-
                 if (result == null)
                 {
                     string id = Guid.NewGuid().ToString();
