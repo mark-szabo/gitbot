@@ -1,20 +1,22 @@
 ﻿using System;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using System.Web.Http.Description;
 using Microsoft.Bot.Connector;
-using Newtonsoft.Json;
 using Microsoft.Bot.Builder.Dialogs;
 using gitbot.Dialogs;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Table;
+using Microsoft.Azure;
 
 namespace gitbot
 {
     [BotAuthentication]
     public class MessagesController : ApiController
     {
+        public CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
+        
         /// <summary>
         /// POST: api/Messages
         /// Receive a message from a user and reply to it
@@ -23,7 +25,50 @@ namespace gitbot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new RootDialog());
+                // Create the table client.
+                CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
+
+                // Retrieve a reference to the table.
+                CloudTable table = tableClient.GetTableReference("conversations");
+
+                // Create the table if it doesn't exist.
+                table.CreateIfNotExists();
+
+                // Read storage
+                TableQuery<Models.Conversation> query = new TableQuery<Models.Conversation>()
+                    .Where(TableQuery.GenerateFilterCondition("ConversationId", QueryComparisons.Equal, activity.Conversation.Id))
+                    .Take(1);
+
+                string result = null;
+                foreach (Models.Conversation conversation in table.ExecuteQuery(query))
+                {
+                    result = conversation.RowKey;
+                }
+
+
+                if (result == null)
+                {
+                    string id = Guid.NewGuid().ToString();
+                    string url = $"http://gitbot.azurewebsites.net/api/webhook/{id}";
+
+                    // Create a new conversation entity.
+                    Models.Conversation conversation = new Models.Conversation(id);
+                    conversation.ServiceUrl = activity.ServiceUrl;
+                    conversation.ConversationId = activity.Conversation.Id;
+                    conversation.BotAccountId = activity.Recipient.Id;
+                    conversation.BotAccountName = activity.Recipient.Name;
+
+                    // Create the TableOperation object that inserts the conversation entity.
+                    TableOperation insertOperation = TableOperation.Insert(conversation);
+
+                    // Execute the insert operation.
+                    table.Execute(insertOperation);
+
+                    ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
+                    var replyMessage = activity.CreateReply($"Hi, I'm gitbot! \n If you want me to notify you about activities in your git repositories, add this url to all your webhooks! \n {url}", "en");
+                    await connector.Conversations.ReplyToActivityAsync(replyMessage);
+                }
+                else await Conversation.SendAsync(activity, () => new RootDialog());
             }
             else
             {
